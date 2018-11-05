@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Digital Signature Service Core Protocols, Elements, and Bindings Version 2.0
+     Committee Specification Draft 01 / Public Review Draft 01
+     29 August 2018
+     Copyright (c) OASIS Open 2018. All Rights Reserved.
+     Source: http://docs.oasis-open.org/dss-x/dss-core/v2.0/csprd01/schema/
+     Latest version of narrative specification: http://docs.oasis-open.org/dss-x/dss-core/v2.0/dss-core-v2.0.html
+     TC IPR Statement: https://www.oasis-open.org/committees/dss-x/ipr.php
+     
+-->
+<!--
+
+Important Remark:
+
+This schema and its declared namespace are changed!
+It is NOT compatible with the original schema!
+
+Version 2.0 of the DSS/X specification introduces a multi-syntax approach to 
+support both JSON and XML. Therefore it is neccessary to limit the use of
+syntax elements to a common base. Another goal is to support implementors 
+using mapping frameworks.These requirements affect the XML syntax and resulted
+in the modification of existing scheme. These major topics are identified:
+
+- the use of xs:any
+- the 'mixed' content attribute of xs:complexType
+- inline namespace declarations usede within XPath expressions
+- 'choice' constructs that maybe mapped by frameworks in an untyped way
+
+This schema is rewritten to fulfil the requirements mentioned above. The 
+functionalities intended by the initial authors is preserved as good as 
+possible. For details regarding the multi-syntax approach and the DSS-X 
+specification in general see [@ToDo].
+
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+    xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+    xmlns:saml2-rw="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
+    targetNamespace="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
+    elementFormDefault="unqualified" attributeFormDefault="unqualified" blockDefault="substitution"
+    version="2.0">
+    <attributeGroup name="IDNameQualifiers">
+        <xs:attribute xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base" name="NameQualifier" type="string"
+            use="optional"/>
+        <xs:attribute xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base" name="SPNameQualifier" type="string"
+            use="optional"/>
+    </attributeGroup>
+    <element name="NameID" type="saml2-rw:NameIDType"/>
+    <complexType name="NameIDType">
+        <simpleContent>
+            <extension base="string">
+                <attributeGroup ref="saml2-rw:IDNameQualifiers"/>
+                <xs:attribute xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                    xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base" name="Format" type="anyURI"
+                    use="optional"/>
+                <xs:attribute xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                    xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base" name="SPProvidedID"
+                    type="string" use="optional"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>
