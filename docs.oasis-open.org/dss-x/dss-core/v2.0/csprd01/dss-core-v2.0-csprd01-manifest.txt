@@ -1,0 +1,161 @@
+Work Product Manifest File
+
+This manifest file is an administrative metadata document produced
+by OASIS Staff as part of the approved Work Product publication
+process.  It provides detailed information about the artifacts
+which constitute the Work Product in any published release, viz.,
+for each specific level of approval (csd01, csd02, cs01, cos, etc).
+
+Users may find the manifest file useful in the following situations,
+or similar situations, to help answer basic questions:
+
+1) "Can I examine the extent/content/structure of the published Work
+   Product without having to download the distribution package from
+   the OASIS Library and then UNzip the entire canonical release
+   package from the ZIP format?"  Yes: scan the manifest file
+   published in any release directory (e.g. in /csd01/, /csprd02/)
+   and inspect the section "ZIP archive contents"
+
+2) "Someone sent me an XML schema file for the level CS01 instance
+   of an OASIS specification: how can I determine whether this
+   schema file is identical to the one published by OASIS?"
+   Compute the MD5 or SHA-1 digest for the file you have, and
+   compare it to the value(s) presented in the manifest file.
+
+===============================
+Contents of this manifest file
+===============================
+
+  - Essential bibliographic information
+  - ZIP archive listing for contents and storage hierarchy
+  - Digest/hash values (MD5, SHA-1) for files in the release directory
+
+* Note that the digest/hash values are not intended to support
+security per se: they are provided simply for casual checking
+of a local file's hash value against the published file to
+detect disk corruption or other non-malicious alteration.
+
+* Note that the MD5/SHA-1 digest/hash values for primary ".html" format
+files in the OASIS Library release directory, as displayed below, are
+computed for OASIS server function, whereas the same ".html" files
+included in the ZIP package file, as prepared for local use, vary by a
+few bytes. The ZIP archive contents listing includes the digest/hash
+(CRC-32) and byte count for these ".html" files in the ZIP package.
+
+======================================
+Essential bibliographic information
+======================================
+
+Digital Signature Service Core Protocols, Elements, and Bindings Version 2.0
+Committee Specification Draft 01 / Public Review Draft 01
+29 August 2018
+Copyright (c) OASIS Open 2018.  All Rights Reserved.
+Produced by:  OASIS Digital Signature Services eXtended (DSS-X) TC
+              https://www.oasis-open.org/committees/dss-x/
+Release URI:  http://docs.oasis-open.org/dss-x/dss-core/v2.0/csprd01/dss-core-v2.0-csprd01.zip
+Manifest URI: http://docs.oasis-open.org/dss-x/dss-core/v2.0/csprd01/dss-core-v2.0-csprd01-manifest.txt
+
+===========================
+ZIP archive contents
+===========================
+
+Archive:  dss-core-v2.0-csprd01.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+  657220  Defl:N   576794  12% 08-29-2018 16:00 acd5c7bf  dss-core-v2.0-csprd01.docx
+       0  Stored        0   0% 08-29-2018 16:00 00000000  dss-core-v2.0-csprd01_files/
+    5537  Defl:N     4556  18% 08-29-2018 16:00 20f31d6e  dss-core-v2.0-csprd01_files/image005.jpg
+    4046  Defl:N     3999   1% 08-29-2018 16:00 5fa672cc  dss-core-v2.0-csprd01_files/image001.jpg
+   19044  Defl:N    17599   8% 08-29-2018 16:00 874da4a5  dss-core-v2.0-csprd01_files/image012.jpg
+    7753  Defl:N     5258  32% 08-29-2018 16:00 c9b8e88f  dss-core-v2.0-csprd01_files/image006.jpg
+   11486  Defl:N    10705   7% 08-29-2018 16:00 11174cf1  dss-core-v2.0-csprd01_files/image014.jpg
+   10459  Defl:N     7927  24% 08-29-2018 16:00 21accc88  dss-core-v2.0-csprd01_files/image003.jpg
+   12697  Defl:N    11442  10% 08-29-2018 16:00 7b8859ff  dss-core-v2.0-csprd01_files/image017.jpg
+   17418  Defl:N    16224   7% 08-29-2018 16:00 8dd47762  dss-core-v2.0-csprd01_files/image011.jpg
+   22681  Defl:N    20269  11% 08-29-2018 16:00 4e330be0  dss-core-v2.0-csprd01_files/image010.jpg
+   12710  Defl:N    11831   7% 08-29-2018 16:00 cf41798c  dss-core-v2.0-csprd01_files/image015.jpg
+   17518  Defl:N    16192   8% 08-29-2018 16:00 4bac1a56  dss-core-v2.0-csprd01_files/image002.png
+    6633  Defl:N     5667  15% 08-29-2018 16:00 bb99044f  dss-core-v2.0-csprd01_files/image008.jpg
+   26335  Defl:N    24614   7% 08-29-2018 16:00 fcf50200  dss-core-v2.0-csprd01_files/image016.jpg
+    7525  Defl:N     6040  20% 08-29-2018 16:00 b3b5e06f  dss-core-v2.0-csprd01_files/image004.jpg
+   18075  Defl:N    16678   8% 08-29-2018 16:00 9d0ed8cb  dss-core-v2.0-csprd01_files/image009.jpg
+   20797  Defl:N    19206   8% 08-29-2018 16:00 291db03c  dss-core-v2.0-csprd01_files/image013.jpg
+    6576  Defl:N     4842  26% 08-29-2018 16:00 4ad5761e  dss-core-v2.0-csprd01_files/image007.jpg
+ 1119405  Defl:N   107790  90% 08-29-2018 16:00 ce803c85  dss-core-v2.0-csprd01.html
+ 1621157  Defl:N  1331191  18% 08-29-2018 16:00 378781aa  dss-core-v2.0-csprd01.pdf
+    6930  Defl:N     1950  72% 08-29-2018 16:00 274d85af  dss-core-v2.0-namespace.html
+       0  Stored        0   0% 08-29-2018 16:00 00000000  schema/
+   14925  Defl:N     2876  81% 08-29-2018 16:00 2236442a  schema/xmldsig-core-schema-dss-rw.xsd
+    3123  Defl:N     1189  62% 08-29-2018 16:00 77c4ebaa  schema/saml-schema-assertion-2.0-dss-rw.xsd
+   11481  Defl:N     2392  79% 08-29-2018 16:00 631afe89  schema/oasis-sstc-saml-schema-protocol-1.1-dss-rw.xsd
+   34637  Defl:N     2958  92% 08-29-2018 16:00 19506f62  schema/schema.json
+    6135  Defl:N     1493  76% 08-29-2018 16:00 a54ec024  schema/oasis-dss-base-schema.xsd
+   27467  Defl:N     3610  87% 08-29-2018 16:00 b88eb422  schema/oasis-dss-core-schema-v2.0.xsd
+--------          -------  ---                            -------
+ 3729770          2235292  40%                            29 files
+
+========================================================================
+MD5 digest/hash values for files in the OASIS Library release directory
+========================================================================
+
+8fb02e7562b3df95e72abee7fca7b210  dss-core-v2.0-csprd01.docx
+fcad627b0381c84189f9547fcdedd0d1  dss-core-v2.0-csprd01_files/image001.jpg
+c5231ba6ccd1fd1ba51deb71cdb722ae  dss-core-v2.0-csprd01_files/image002.png
+ce326da9d10c76f68d2528b2e89b4041  dss-core-v2.0-csprd01_files/image003.jpg
+939805efa9675279e5067788698a3a9d  dss-core-v2.0-csprd01_files/image004.jpg
+1ddf6645b89d4b6631bc0fd75ddba145  dss-core-v2.0-csprd01_files/image005.jpg
+5f535d69681a7488b04003c1b767ebdc  dss-core-v2.0-csprd01_files/image006.jpg
+b8c7bdbd41dc2ef0fa3ab7865ef25b11  dss-core-v2.0-csprd01_files/image007.jpg
+f5e1347a41534718840c23986ffb3971  dss-core-v2.0-csprd01_files/image008.jpg
+25873da03da88d1293b5fc5dde8d6bde  dss-core-v2.0-csprd01_files/image009.jpg
+0c67d208ebb5c644f2c8b447bdea7974  dss-core-v2.0-csprd01_files/image010.jpg
+26599d5490ee3dd4b6386c763011f2f2  dss-core-v2.0-csprd01_files/image011.jpg
+0373f7ebb909db73aeef9a566751bda3  dss-core-v2.0-csprd01_files/image012.jpg
+c394a97cfed2c3aac7dd85fa93d1812b  dss-core-v2.0-csprd01_files/image013.jpg
+a9d5f02509415bbb2ea99cc223e02adf  dss-core-v2.0-csprd01_files/image014.jpg
+26abf6b4754880e674bcfa2371ab5e3e  dss-core-v2.0-csprd01_files/image015.jpg
+1b4db2671e0415110a3afddad8928f3f  dss-core-v2.0-csprd01_files/image016.jpg
+e92e8792657e7e57f88e0cc929ae2e83  dss-core-v2.0-csprd01_files/image017.jpg
+19091d52f48e884fde340115d7c24020  dss-core-v2.0-csprd01.html
+8f680c4585be3a200cf0a4dca0c6519f  dss-core-v2.0-csprd01.pdf
+58d836d4a43d42fe7fa6ba3b2fdcd334  dss-core-v2.0-csprd01.zip
+7878ccfb0050f16759732b65bfa6d44a  dss-core-v2.0-namespace.html
+638aae5e9ac63a1b6bb938bc323cc4bf  schema/oasis-dss-base-schema.xsd
+e386f0a9eccfaaf2cdeed2feba5e6e4f  schema/oasis-dss-core-schema-v2.0.xsd
+860919a827f4e7402fa09c2129514754  schema/oasis-sstc-saml-schema-protocol-1.1-dss-rw.xsd
+77fdaf0d4342d0cdf6d3424fce1b89ae  schema/saml-schema-assertion-2.0-dss-rw.xsd
+6d086111ed7f094ce7bbc78eda30b3b4  schema/schema.json
+c5c1cfe9db8f163e28d3ed06e635a754  schema/xmldsig-core-schema-dss-rw.xsd
+
+==========================================================================
+SHA-1 digest/hash values for files in the OASIS Library release directory
+==========================================================================
+
+aaff8d43567d6e314f411170a5fcf3a1437fb428  dss-core-v2.0-csprd01.docx
+32a0a1f3d735626eb528617f0f5d191bbfed26ae  dss-core-v2.0-csprd01_files/image001.jpg
+dbb3f39397dcf3b8cab9739b454cbd938e8d3dfd  dss-core-v2.0-csprd01_files/image002.png
+2dc2f97adf2483c4d98d2896d0905af80feb8737  dss-core-v2.0-csprd01_files/image003.jpg
+d45b5feab7941787cfb8c8c00e9ad9bbb9ebbe14  dss-core-v2.0-csprd01_files/image004.jpg
+3c397d9f12be927477a6635b5176197ffb2ac151  dss-core-v2.0-csprd01_files/image005.jpg
+cc705d56ac9e764919c2e4e2e4ab2b667591c10b  dss-core-v2.0-csprd01_files/image006.jpg
+031538b2b998c87bd417682d59966eee4ab8f7cb  dss-core-v2.0-csprd01_files/image007.jpg
+4b0d1b9cd59100fe46c7775d2399ecc2a24e3d9b  dss-core-v2.0-csprd01_files/image008.jpg
+83cc71bec4eabdc0f68affb92d640f72c31433a5  dss-core-v2.0-csprd01_files/image009.jpg
+5bda193b14d4c5561668dcbeecb1d774eadfa40c  dss-core-v2.0-csprd01_files/image010.jpg
+ac945321357883924c572f5f5ebe3f2792c3abb3  dss-core-v2.0-csprd01_files/image011.jpg
+2caff2d2d97b66f3bab6c96df7f98a29941cd1da  dss-core-v2.0-csprd01_files/image012.jpg
+042631f00c644e2f651e6cdcca0e9d064bba6443  dss-core-v2.0-csprd01_files/image013.jpg
+9b036af8f19823d955ce47ad141680114567f59f  dss-core-v2.0-csprd01_files/image014.jpg
+4fa1aefef3214c9b66162656fec5e029dd7f52df  dss-core-v2.0-csprd01_files/image015.jpg
+3b72cce5c3b6138c1a04bd2b81544af636eb947a  dss-core-v2.0-csprd01_files/image016.jpg
+84dac9ccd8288bb9f8e52da3432f62dc81ae384a  dss-core-v2.0-csprd01_files/image017.jpg
+695e57235be89ea5607c704d1677fc158f840feb  dss-core-v2.0-csprd01.html
+dff94473dd58a363ebeaf663bbb74a08d4815e15  dss-core-v2.0-csprd01.pdf
+4925799a9044e01c72394645c304499221bfe7e9  dss-core-v2.0-csprd01.zip
+79335b3d709f705f4c5076697a21e5259f0ab620  dss-core-v2.0-namespace.html
+e268849daed166f984f17e8778683a700e6532b1  schema/oasis-dss-base-schema.xsd
+13c789bfbf1e1d53fb7530168f7a1f5b78f0073a  schema/oasis-dss-core-schema-v2.0.xsd
+d1eeb28d6a8eb78ac49c8840737355e7265bf4bc  schema/oasis-sstc-saml-schema-protocol-1.1-dss-rw.xsd
+b28d1497ce2101b6895461ff95b3d2e9887daf02  schema/saml-schema-assertion-2.0-dss-rw.xsd
+1781fed6cace69ecc866c0007b015a1575685f3d  schema/schema.json
+d521c8c54a68425a062643bc8c7777ccce4540a6  schema/xmldsig-core-schema-dss-rw.xsd
