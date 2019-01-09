@@ -31,8 +31,7 @@ specification in general see [@ToDo].
            xmlns:dss2="http://docs.oasis-open.org/dss-x/ns/core"
            xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base"
            xmlns:ds-rw="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
-           xmlns:saml-rw="http://docs.oasis-open.org/dss/ns/SAML_1.0/assertion/rewritten"
-           xmlns:saml2-rw="http://docs.oasis-open.org/dss/ns/saml2/rewritten"
+           xmlns:saml2-rw="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
            targetNamespace="http://docs.oasis-open.org/dss-x/ns/core"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
@@ -49,7 +48,7 @@ specification in general see [@ToDo].
 	
 	  <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
               schemaLocation="xmldsig-core-schema-dss-rw.xsd"/>
-	  <xs:import namespace="http://docs.oasis-open.org/dss/ns/saml2/rewritten"
+	  <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
               schemaLocation="saml-schema-assertion-2.0-dss-rw.xsd"/>
 	
 	
@@ -102,7 +101,8 @@ specification in general see [@ToDo].
                            minOccurs="0"/>
                <xs:element name="SignatureObject"
                            type="dss2:SignatureObjectType"
-                           minOccurs="0"/>
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
             </xs:sequence>
          </xs:extension>
 			   </xs:complexContent>
@@ -245,9 +245,9 @@ specification in general see [@ToDo].
                            minOccurs="0"
                            maxOccurs="1"/>
                <xs:element name="AddTimestamp"
-                           type="dss2:AugmentSignatureInstructionType"
+                           type="xs:anyURI"
                            minOccurs="0"
-                           maxOccurs="1"/>
+                           maxOccurs="unbounded"/>
             </xs:sequence>
          </xs:extension>
       </xs:complexContent>
@@ -335,17 +335,17 @@ specification in general see [@ToDo].
                            minOccurs="0"
                            maxOccurs="1"/>
                <xs:element name="ReturnAugmentedSignature"
-                           type="dss2:AugmentSignatureInstructionType"
+                           type="xs:anyURI"
                            minOccurs="0"
-                           maxOccurs="unbounded"/>
+                           maxOccurs="1"/>
                <xs:element name="ReturnTransformedDocument"
                            type="dss2:ReturnTransformedDocumentType"
                            minOccurs="0"
                            maxOccurs="unbounded"/>
                <xs:element name="ReturnTimestampedSignature"
-                           type="dss2:AugmentSignatureInstructionType"
+                           type="xs:anyURI"
                            minOccurs="0"
-                           maxOccurs="1"/>
+                           maxOccurs="unbounded"/>
                <xs:element name="VerifyManifests"
                            type="xs:boolean"
                            default="false"
@@ -407,11 +407,11 @@ specification in general see [@ToDo].
                <xs:element name="AugmentedSignature"
                            type="dss2:AugmentedSignatureType"
                            minOccurs="0"
-                           maxOccurs="1"/>
+                           maxOccurs="unbounded"/>
                <xs:element name="TimestampedSignature"
                            type="dss2:AugmentedSignatureType"
                            minOccurs="0"
-                           maxOccurs="1"/>
+                           maxOccurs="unbounded"/>
             </xs:sequence>
          </xs:extension>
       </xs:complexContent>
@@ -441,11 +441,9 @@ specification in general see [@ToDo].
 	  <xs:element name="Response" type="dsb:ResponseBaseType"/>
 	
 	  <xs:element name="SignatureType" type="xs:anyURI"/>
-	  <xs:element name="AddTimestamp" type="dss2:AugmentSignatureInstructionType"/>
+	  <xs:element name="AddTimestamp" type="xs:anyURI"/>
 	
-	  <xs:complexType name="AugmentSignatureInstructionType">
-		    <xs:attribute name="Type" type="xs:anyURI" use="optional"/>
-	  </xs:complexType>
+	
 	  <xs:element name="IntendedAudience" type="dss2:IntendedAudienceType"/>
    <xs:complexType name="IntendedAudienceType">
       <xs:sequence>

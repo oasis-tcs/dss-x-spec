@@ -27,8 +27,8 @@ specification in general see [@ToDo].
         xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
         
         xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
-        xmlns:saml2-rw="http://docs.oasis-open.org/dss/ns/saml2/rewritten"
-        targetNamespace="http://docs.oasis-open.org/dss/ns/saml2/rewritten"
+        xmlns:saml2-rw="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
+        targetNamespace="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
         elementFormDefault="unqualified"
         attributeFormDefault="unqualified"
         blockDefault="substitution"

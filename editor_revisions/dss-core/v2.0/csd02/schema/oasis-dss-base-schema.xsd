@@ -108,7 +108,6 @@
 	  <xs:element name="OptionalInputs" type="dsb:OptionalInputsType"/>
 	  <xs:complexType name="OptionalInputsType">
 		    <xs:sequence>
-			<!--xs:choice-->
 				     <xs:element name="ServicePolicy"
                      type="xs:anyURI"
                      minOccurs="0"
@@ -118,8 +117,6 @@
                      type="dsb:AnyType"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
-			      <!--/xs:choice-->
-
 		    </xs:sequence>
 	  </xs:complexType>
 	
