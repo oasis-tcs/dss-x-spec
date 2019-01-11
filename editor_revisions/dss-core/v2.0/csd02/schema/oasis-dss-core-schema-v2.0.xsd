@@ -248,6 +248,12 @@ specification in general see [@ToDo].
                            type="xs:anyURI"
                            minOccurs="0"
                            maxOccurs="unbounded"/>
+               <xs:element name="EnforceAsynchronousProcessing"
+                           type="xs:boolean"
+                           default="false"
+                           minOccurs="0"
+                           maxOccurs="1"/>
+               <xs:element name="Nonce" type="xs:integer" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
          </xs:extension>
       </xs:complexContent>
@@ -289,7 +295,6 @@ specification in general see [@ToDo].
                            type="dss2:SignedReferencesType"
                            minOccurs="0"
                            maxOccurs="1"/>
-               <xs:element name="Nonce" type="xs:integer" minOccurs="0" maxOccurs="1"/>
                <xs:element name="SignatureAlgorithm"
                            type="xs:string"
                            minOccurs="0"
@@ -367,17 +372,20 @@ specification in general see [@ToDo].
                            type="dss2:SchemasType"
                            minOccurs="0"
                            maxOccurs="1"/>
-               <xs:element name="DocumentWithSignature"
-                           type="dss2:DocumentWithSignatureType"
-                           minOccurs="0"
-                           maxOccurs="1"/>
             </xs:sequence>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
    <xs:complexType name="OptionalOutputsSignType">
       <xs:complexContent>
-         <xs:extension base="dss2:OptionalOutputsBaseType"/>
+         <xs:extension base="dss2:OptionalOutputsBaseType">
+            <xs:sequence>
+               <xs:element name="DocumentWithSignature"
+                           type="dss2:DocumentWithSignatureType"
+                           minOccurs="0"
+                           maxOccurs="1"/>
+            </xs:sequence>
+         </xs:extension>
       </xs:complexContent>
    </xs:complexType>
    <xs:complexType name="OptionalOutputsVerifyType">
@@ -648,28 +656,36 @@ specification in general see [@ToDo].
 	  <xs:element type="xs:boolean" name="ReturnSigningTimeInfo" default="false"/>
 	  <xs:element name="SigningTimeInfo" type="dss2:SigningTimeInfoType"/>
 	  <xs:complexType name="SigningTimeInfoType">
-		    <xs:sequence>
-			      <xs:element name="SigningTime" type="xs:dateTime"/>
-			      <xs:element name="SigningTimeBoundaries" minOccurs="0">
-				        <xs:complexType>
-					          <xs:sequence>
-						            <xs:element name="LowerBoundary" type="xs:dateTime" minOccurs="0"/>
-						            <xs:element name="UpperBoundary" type="xs:dateTime" minOccurs="0"/>
-					          </xs:sequence>
-				        </xs:complexType>
-			      </xs:element>
-		    </xs:sequence>
-	  </xs:complexType>
+      <xs:sequence>
+         <xs:element name="SigningTime" type="xs:dateTime"/>
+         <xs:element name="SigningTimeBoundaries"
+                     type="dss2:SigningTimeBoundariesType"
+                     minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="SigningTimeBoundariesType">
+      <xs:sequence>
+         <xs:element name="LowerBoundary" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="UpperBoundary" type="xs:dateTime" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
 	  <xs:element type="xs:boolean" name="ReturnSignerIdentity" default="false"/>
 	  <xs:element name="SignerIdentity" type="saml2-rw:NameIDType"/>
 	
 	  <xs:element name="AugmentSignature" type="dss2:AugmentedSignatureType"/>
 	  <xs:complexType name="AugmentedSignatureType">
-		    <xs:sequence>
-			      <xs:element name="SignatureObject" type="dss2:SignatureObjectType"/>
-		    </xs:sequence>
-		    <xs:attribute name="Type" type="xs:anyURI" use="optional"/>
-	  </xs:complexType>
+      <xs:sequence>
+         <xs:element name="SignatureObject"
+                     type="dss2:SignatureObjectType"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="DocumentWithSignature"
+                     type="dss2:DocumentWithSignatureType"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="Type" type="xs:anyURI" use="optional"/>
+   </xs:complexType>
 	  <xs:element name="ReturnTransformedDocument"
                type="dss2:ReturnTransformedDocumentType"/>
    <xs:complexType name="ReturnTransformedDocumentType">

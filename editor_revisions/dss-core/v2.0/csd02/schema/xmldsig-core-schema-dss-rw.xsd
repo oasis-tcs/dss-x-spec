@@ -54,8 +54,7 @@ specification in general see [@ToDo].
         xmlns:dss2="http://docs.oasis-open.org/dss-x/ns/core"
         xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base"
         xmlns:ds-rw="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
-        xmlns:saml-rw="http://docs.oasis-open.org/dss/ns/SAML_1.0/assertion/rewritten"
-        xmlns:saml2-rw="http://docs.oasis-open.org/dss/ns/saml2/rewritten"
+        xmlns:saml2-rw="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
         
         
         
