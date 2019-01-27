@@ -208,22 +208,12 @@ specification in general see [@ToDo].
    <xs:complexType name="SignatureObjectType">
       <xs:choice>
          <xs:element name="Base64Signature" type="dsb:Base64DataType"/>
-         <xs:element name="SignaturePtr" type="dss2:SignaturePtrType"/>
+         <xs:element name="SignaturePtr" type="dsb:SignaturePtrType"/>
       </xs:choice>
       <xs:attribute name="SchemaRefs" type="xs:IDREFS" use="optional"/>
    </xs:complexType>
 	
-	  <xs:element name="SignaturePtr" type="dss2:SignaturePtrType"/>
-   <xs:complexType name="SignaturePtrType">
-      <xs:sequence>
-         <xs:element name="NsPrefixMapping"
-                     type="dsb:NsPrefixMappingType"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-      </xs:sequence>
-      <xs:attribute name="WhichDocument" type="xs:IDREF" use="required"/>
-      <xs:attribute name="XPath" type="xs:string" use="optional"/>
-   </xs:complexType>
+	
 	
 	
 	
@@ -343,10 +333,6 @@ specification in general see [@ToDo].
                            type="xs:anyURI"
                            minOccurs="0"
                            maxOccurs="1"/>
-               <xs:element name="ReturnTransformedDocument"
-                           type="dss2:ReturnTransformedDocumentType"
-                           minOccurs="0"
-                           maxOccurs="unbounded"/>
                <xs:element name="ReturnTimestampedSignature"
                            type="xs:anyURI"
                            minOccurs="0"
@@ -364,10 +350,6 @@ specification in general see [@ToDo].
       <xs:complexContent>
          <xs:extension base="dsb:OptionalOutputsType">
             <xs:sequence>
-               <xs:element name="TransformedDocument"
-                           type="dss2:TransformedDocumentType"
-                           minOccurs="0"
-                           maxOccurs="1"/>
                <xs:element name="Schemas"
                            type="dss2:SchemasType"
                            minOccurs="0"
@@ -496,7 +478,7 @@ specification in general see [@ToDo].
    <xs:element name="Property" type="dss2:PropertyType"/>
 	  <xs:element name="IncludeObject" type="dss2:IncludeObjectType"/>
    <xs:complexType name="IncludeObjectType">
-      <xs:attribute name="WhichDocument" type="xs:IDREF"/>
+      <xs:attribute name="WhichData" type="xs:IDREF"/>
       <xs:attribute name="HasObjectTagsAndAttributesSet"
                     type="xs:boolean"
                     default="false"/>
@@ -518,7 +500,7 @@ specification in general see [@ToDo].
                      minOccurs="0"
                      maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attribute name="WhichDocument" type="xs:IDREF"/>
+      <xs:attribute name="WhichData" type="xs:IDREF"/>
       <xs:attribute name="CreateEnvelopedSignature" type="xs:boolean" default="true"/>
    </xs:complexType>
 	  <xs:element name="DocumentWithSignature" type="dss2:DocumentWithSignatureType"/>

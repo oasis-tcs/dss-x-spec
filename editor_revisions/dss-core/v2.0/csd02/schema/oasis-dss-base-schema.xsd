@@ -82,6 +82,23 @@
 		    <xs:attribute name="IDREF" type="xs:IDREF" use="optional"/>
 	  </xs:complexType>
 
+
+	  <xs:complexType name="SignaturePtrType">
+		    <xs:sequence>
+			      <xs:element name="NsPrefixMapping"
+                     type="dsb:NsPrefixMappingType"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+		    </xs:sequence>
+		    <xs:attribute name="WhichData" type="xs:IDREF" use="required"/>
+		    <xs:attribute name="XPath" type="xs:string" use="optional"/>
+		    <xs:attribute name="XPathQualifier"
+                    type="xs:anyURI"
+                    use="optional"
+                    default="http://www.w3.org/TR/2010/REC-xpath20-20101214/"/>
+	  </xs:complexType>
+	
+	
 	  <xs:element name="Result" type="dsb:ResultType"/>
 	  <xs:complexType name="ResultType">
 		    <xs:sequence>
