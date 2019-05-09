@@ -69,7 +69,7 @@ This specification is provided under the [RF on Limited Terms](https://www.oasis
 Note that any machine-readable content ([Computer Language Definitions](https://www.oasis-open.org/policies-guidelines/tc-process#wpComponentsCompLang)) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
 
-#### Citation format:
+### Citation format:
 When referencing this specification the following citation format should be used:
 
 **[DSS-v2.0]**
