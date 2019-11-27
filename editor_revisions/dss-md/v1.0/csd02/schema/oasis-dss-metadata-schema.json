@@ -1,0 +1,330 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "md-ProviderType": {
+            "$xsd-type": "ProviderType",
+            "$xsd-full-type": "md:ProviderType",
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "logo": {"type": "string"},
+                "region": {"type": "string"},
+                "lang": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "description": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-InternationalStringType"}
+                },
+                "authinfo": {"type": "string"},
+                "protocol": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ProtocolType"}
+                },
+                "ext": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ExtensionType"}
+                }
+            },
+            "required": [
+                "name",
+                "logo",
+                "region",
+                "protocol"
+            ]
+        },
+        "dsb-InternationalStringType": {
+            "$xsd-type": "InternationalStringType",
+            "$xsd-full-type": "dsb:InternationalStringType",
+            "type": "object",
+            "properties": {
+                "value": {"type": "string"},
+                "lang": {"type": "string"}
+            },
+            "required": ["lang"]
+        },
+        "md-ProtocolType": {
+            "$xsd-type": "ProtocolType",
+            "$xsd-full-type": "md:ProtocolType",
+            "type": "object",
+            "properties": {
+                "spec": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "version": {"type": "string"},
+                "description": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-InternationalStringType"}
+                },
+                "profile": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ProfileType"}
+                },
+                "ext": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ExtensionType"}
+                }
+            },
+            "required": ["profile"]
+        },
+        "md-ProfileType": {
+            "$xsd-type": "ProfileType",
+            "$xsd-full-type": "md:ProfileType",
+            "type": "object",
+            "properties": {
+                "pid": {"type": "string"},
+                "spec": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "description": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-InternationalStringType"}
+                },
+                "op": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-OperationType"}
+                },
+                "pol": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-PolicyType"}
+                },
+                "ext": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ExtensionType"}
+                }
+            },
+            "required": [
+                "pid",
+                "op"
+            ]
+        },
+        "md-OperationType": {
+            "$xsd-type": "OperationType",
+            "$xsd-full-type": "md:OperationType",
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "spec": {"type": "string"},
+                "desc": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-InternationalStringType"}
+                },
+                "in": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ParameterType"}
+                },
+                "opt": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ParameterType"}
+                },
+                "out": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ParameterType"}
+                },
+                "xsd": {"type": "string"},
+                "ext": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ExtensionType"}
+                }
+            },
+            "required": ["name"]
+        },
+        "md-ParameterType": {
+            "$xsd-type": "ParameterType",
+            "$xsd-full-type": "md:ParameterType",
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "spec": {"type": "string"},
+                "desc": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-InternationalStringType"}
+                },
+                "form": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-FormatType"}
+                },
+                "xsd": {"type": "string"},
+                "ext": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ExtensionType"}
+                }
+            },
+            "required": ["name"]
+        },
+        "md-FormatType": {
+            "$xsd-type": "FormatType",
+            "$xsd-full-type": "md:FormatType",
+            "type": "object",
+            "properties": {
+                "fid": {"type": "string"},
+                "spec": {"type": "string"},
+                "desc": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-InternationalStringType"}
+                },
+                "trfo": {"$ref": "#/definitions/dsigrw-TransformsType"},
+                "format": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ParameterType"}
+                },
+                "ext": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-AnyType"}
+                },
+                "def": {
+                    "type": "boolean",
+                    "default": "false"
+                }
+            },
+            "required": ["fid"]
+        },
+        "dsigrw-TransformsType": {
+            "$xsd-type": "TransformsType",
+            "$xsd-full-type": "ds-rw:TransformsType",
+            "type": "object",
+            "properties": {
+                "transform": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsigrw-TransformType"}
+                }
+            },
+            "required": ["transform"]
+        },
+        "dsigrw-TransformType": {
+            "$xsd-type": "TransformType",
+            "$xsd-full-type": "ds-rw:TransformType",
+            "type": "object",
+            "properties": {
+                "val": {"type": "string"},
+                "b64Content": {"type": "string"},
+                "xPath": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "nsDecl": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/nsl-NsPrefixMappingType"}
+                },
+                "alg": {"type": "string"}
+            },
+            "required": ["alg"]
+        },
+        "nsl-NsPrefixMappingType": {
+            "$xsd-type": "NsPrefixMappingType",
+            "$xsd-full-type": "nsl:NsPrefixMappingType",
+            "type": "object",
+            "properties": {
+                "uri": {"type": "string"},
+                "pre": {"type": "string"}
+            },
+            "required": [
+                "uri",
+                "pre"
+            ]
+        },
+        "dsb-AnyType": {
+            "$xsd-type": "AnyType",
+            "$xsd-full-type": "dsb:AnyType",
+            "type": "object",
+            "properties": {
+                "ID": {"type": "string"},
+                "val": {"type": "string"},
+                "attRef": {"$ref": "#/definitions/dsb-AttachmentReferenceType"},
+                "transforms": {"$ref": "#/definitions/dsigrw-TransformsType"},
+                "mimeType": {"type": "string"},
+                "idRef": {"type": "string"}
+            }
+        },
+        "dsb-AttachmentReferenceType": {
+            "$xsd-type": "AttachmentReferenceType",
+            "$xsd-full-type": "dsb:AttachmentReferenceType",
+            "type": "object",
+            "properties": {
+                "di": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/dsb-DigestInfoType"}
+                },
+                "attURI": {"type": "string"}
+            },
+            "required": ["attURI"]
+        },
+        "dsb-DigestInfoType": {
+            "$xsd-type": "DigestInfoType",
+            "$xsd-full-type": "dsb:DigestInfoType",
+            "type": "object",
+            "properties": {
+                "alg": {"type": "string"},
+                "val": {"type": "string"}
+            },
+            "required": [
+                "alg",
+                "val"
+            ]
+        },
+        "dsb-Base64DataType": {
+            "$xsd-type": "Base64DataType",
+            "$xsd-full-type": "dsb:Base64DataType",
+            "type": "object",
+            "properties": {
+                "ID": {"type": "string"},
+                "val": {"type": "string"},
+                "attRef": {"$ref": "#/definitions/dsb-AttachmentReferenceType"},
+                "transforms": {"$ref": "#/definitions/dsigrw-TransformsType"},
+                "mimeType": {"type": "string"},
+                "idRef": {"type": "string"}
+            }
+        },
+        "md-ExtensionType": {
+            "$xsd-type": "ExtensionType",
+            "$xsd-full-type": "md:ExtensionType",
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "value": {"type": "string"}
+            },
+            "required": [
+                "name",
+                "value"
+            ]
+        },
+        "md-PolicyType": {
+            "$xsd-type": "PolicyType",
+            "$xsd-full-type": "md:PolicyType",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "pbref": {"$ref": "#/definitions/md-PolicyByRefType"},
+                "pbdef": {"$ref": "#/definitions/dsb-AnyType"},
+                "ep": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "ext": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/md-ExtensionType"}
+                }
+            }
+        },
+        "md-PolicyByRefType": {
+            "$xsd-type": "PolicyByRefType",
+            "$xsd-full-type": "md:PolicyByRefType",
+            "type": "object",
+            "properties": {
+                "polid": {"type": "string"},
+                "polloc": {"type": "string"}
+            },
+            "required": ["polid"]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "service": {"$ref": "#/definitions/md-ProviderType"}
+    }
+}

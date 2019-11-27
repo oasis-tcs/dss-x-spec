@@ -52,14 +52,14 @@ https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dss-x.
 		    <xs:documentation xml:lang="en">This schema defines general structures for providing service-related information.</xs:documentation>
 	  </xs:annotation>
 	
- 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"
-              schemaLocation="xml.xsd"/>
+ 	<!--xs:import namespace="http://www.w3.org/XML/1998/namespace"
+              schemaLocation="xml.xsd"/-->
 
     <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/base"
-              schemaLocation="oasis-dss-base-schema.xsd"/>
+     schemaLocation="https://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-base-schema.xsd"/>
 
 	  <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
-              schemaLocation="xmldsig-core-schema-dss-rw.xsd"/>
+	   schemaLocation="https://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-rw-xmldsig-core-schema.xsd"/>
 
     <!-- =================================== -->
     <!-- Basic components                    -->

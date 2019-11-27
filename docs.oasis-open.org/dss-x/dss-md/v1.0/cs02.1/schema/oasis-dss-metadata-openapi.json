@@ -1,0 +1,263 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "OASIS DSS 2.0",
+        "description": "OASIS DSS 2.0",
+        "contact": {
+            "name": "OASIS DSS 2.0 Sample application support",
+            "url": "https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dss-x",
+            "email": "dss-x-comment@lists.oasis-open.org"
+        },
+        "license": {
+            "name": "RF on Limited Terms",
+            "url": "https://www.oasis-open.org/policies-guidelines/ipr#RF-on-Limited-Mode"
+        },
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "https://dev.trustable.eu:{port}/{basePath}",
+            "description": "OASIS DSS 2.0 test instance",
+            "variables": {
+                "port": {"default": "443"},
+                "basePath": {"default": "dss/v2.0/test"}
+            }
+        }
+    ],
+    "paths": {
+        "/metadata": {
+            "summary": "endpoint for requesting metadata",
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Metadata response object",
+                        "content": {
+                            "application/json": {
+                                "schema": {"$ref": "#/components/schemas/md-ProviderType"},
+                                "examples": {}
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Metadata response object",
+                        "content": {
+                            "application/json": {
+                                "schema": {"$ref": "#/components/schemas/md-ProviderType"},
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "dsb-InternationalStringType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/dsb-InternationalStringType"},
+            "dsigrw-TransformsType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/dsigrw-TransformsType"},
+            "dsigrw-TransformType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/dsigrw-TransformType"},
+            "nsl-NsPrefixMappingType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/nsl-NsPrefixMappingType"},
+            "dsb-AnyType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/dsb-AnyType"},
+            "dsb-AttachmentReferenceType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/dsb-AttachmentReferenceType"},
+            "dsb-DigestInfoType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/dsb-DigestInfoType"},
+            "dsb-Base64DataType": {"$ref": "http://docs.oasis-open.org/dss-x/dss-core/v2.0/cs01/schema/oasis-dss-core-schema.json#/definitions/dsb-Base64DataType"},
+            "md-ProviderType": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "logo": {"type": "string"},
+                    "region": {"type": "string"},
+                    "lang": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                    },
+                    "description": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/dsb-InternationalStringType"}
+                    },
+                    "authinfo": {"type": "string"},
+                    "protocol": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ProtocolType"}
+                    },
+                    "ext": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ExtensionType"}
+                    }
+                },
+                "required": [
+                    "name",
+                    "logo",
+                    "region",
+                    "protocol"
+                ]
+            },
+            "md-ProtocolType": {
+                "type": "object",
+                "properties": {
+                    "spec": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                    },
+                    "version": {"type": "string"},
+                    "description": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/dsb-InternationalStringType"}
+                    },
+                    "profile": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ProfileType"}
+                    },
+                    "ext": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ExtensionType"}
+                    }
+                },
+                "required": ["profile"]
+            },
+            "md-ProfileType": {
+                "type": "object",
+                "properties": {
+                    "pid": {"type": "string"},
+                    "spec": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                    },
+                    "description": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/dsb-InternationalStringType"}
+                    },
+                    "op": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-OperationType"}
+                    },
+                    "pol": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-PolicyType"}
+                    },
+                    "ext": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ExtensionType"}
+                    }
+                },
+                "required": [
+                    "pid",
+                    "op"
+                ]
+            },
+            "md-OperationType": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "spec": {"type": "string"},
+                    "desc": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/dsb-InternationalStringType"}
+                    },
+                    "in": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ParameterType"}
+                    },
+                    "opt": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ParameterType"}
+                    },
+                    "out": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ParameterType"}
+                    },
+                    "xsd": {"type": "string"},
+                    "ext": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ExtensionType"}
+                    }
+                },
+                "required": ["name"]
+            },
+            "md-ParameterType": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "spec": {"type": "string"},
+                    "desc": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/dsb-InternationalStringType"}
+                    },
+                    "form": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-FormatType"}
+                    },
+                    "xsd": {"type": "string"},
+                    "ext": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ExtensionType"}
+                    }
+                },
+                "required": ["name"]
+            },
+            "md-FormatType": {
+                "type": "object",
+                "properties": {
+                    "fid": {"type": "string"},
+                    "spec": {"type": "string"},
+                    "desc": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/dsb-InternationalStringType"}
+                    },
+                    "trfo": {"$ref": "#/components/schemas/dsigrw-TransformsType"},
+                    "format": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ParameterType"}
+                    },
+                    "ext": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/dsb-AnyType"}
+                    },
+                    "def": {
+                        "type": "boolean",
+                        "default": "false"
+                    }
+                },
+                "required": ["fid"]
+            },
+            "md-ExtensionType": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "value": {"type": "string"}
+                },
+                "required": [
+                    "name",
+                    "value"
+                ]
+            },
+            "md-PolicyType": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "pbref": {"$ref": "#/components/schemas/md-PolicyByRefType"},
+                    "pbdef": {"$ref": "#/components/schemas/dsb-AnyType"},
+                    "ep": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                    },
+                    "ext": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/md-ExtensionType"}
+                    }
+                }
+            },
+            "md-PolicyByRefType": {
+                "type": "object",
+                "properties": {
+                    "polid": {"type": "string"},
+                    "polloc": {"type": "string"}
+                },
+                "required": ["polid"]
+            }
+        }
+    }
+}

@@ -29,6 +29,7 @@ https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dss-x.
            
            
            
+           xmlns:nsl="http://docs.oasis-open.org/dss-x/ns/nsList"
            xmlns:dss2="http://docs.oasis-open.org/dss-x/ns/core"
            xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base"
            xmlns:ds-rw="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
@@ -40,13 +41,15 @@ https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dss-x.
 	  <xs:annotation>
 		    <xs:documentation xml:lang="en">This schema defines the Digital Signature Service Core Protocols, Elements, and Bindings Committee Specification version 2.0 </xs:documentation>
 	  </xs:annotation>
+   <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/nsList"
+              schemaLocation="oasis-dss-nslist-schema.xsd"/>
    <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/base"
               schemaLocation="oasis-dss-base-schema.xsd"/>
 	
 	  <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
-              schemaLocation="xmldsig-core-schema-dss-rw.xsd"/>
+              schemaLocation="oasis-dss-rw-xmldsig-core-schema.xsd"/>
 	  <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/saml2/rewritten"
-              schemaLocation="saml-schema-assertion-2.0-dss-rw.xsd"/>
+              schemaLocation="oasis-dss-rw-saml-schema-assertion-2.0.xsd"/>
 	
 	
 	
@@ -495,7 +498,7 @@ https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dss-x.
             <xs:element name="XPathFirstChildOf" type="xs:string"/>
          </xs:choice>
          <xs:element name="NsPrefixMapping"
-                     type="dsb:NsPrefixMappingType"
+                     type="nsl:NsPrefixMappingType"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
       </xs:sequence>
@@ -548,7 +551,7 @@ https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dss-x.
             </xs:simpleType>
          </xs:element>
          <xs:element name="NsPrefixMapping"
-                     type="dsb:NsPrefixMappingType"
+                     type="nsl:NsPrefixMappingType"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
       </xs:sequence>

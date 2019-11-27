@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:dsb="http://docs.oasis-open.org/dss-x/ns/base"
+           xmlns:nsl="http://docs.oasis-open.org/dss-x/ns/nsList"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:ds-rw="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
            
@@ -17,33 +18,11 @@
 	  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
               schemaLocation="xml.xsd"/>
 
+	  <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/nsList"
+              schemaLocation="oasis-dss-nslist-schema.xsd"/>
 	  <xs:import namespace="http://docs.oasis-open.org/dss-x/ns/xmldsig/rewritten"
-              schemaLocation="xmldsig-core-schema-dss-rw.xsd"/>
+              schemaLocation="oasis-dss-rw-xmldsig-core-schema.xsd"/>
 	
-	  <!-- =================================== -->
-	  <!-- Holder for namespace prefix / URI   -->
-	  <!-- pairs used e.g. in XPath            -->
-	  <!-- expressions.                        -->
-	  <!-- =================================== -->
-	
-	  <xs:complexType name="NsPrefixMappingType">
-		    <xs:sequence>
-			      <xs:element name="NamespaceURI" type="xs:anyURI"/>
-			      <xs:element name="NamespacePrefix" type="xs:string"/>
-		    </xs:sequence>
-	  </xs:complexType>
-
-
-	  <!-- =================================== -->
-	  <!-- Implement the xs:any functionality  -->
-	  <!-- using a base64 blob.                -->
-	  <!-- =================================== -->
-	  <xs:complexType name="AnyType">
-		    <xs:complexContent>
-			      <xs:extension base="dsb:Base64DataType"/>
-		    </xs:complexContent>
-	  </xs:complexType>
-
 
 	  <!-- =================================== -->
 	  <!-- Versatile structures separated from -->
@@ -57,7 +36,7 @@
 			      </xs:extension>
 		    </xs:simpleContent>
 	  </xs:complexType>
-
+	
 	  <xs:complexType name="DigestInfoType">
 		    <xs:sequence>
 			      <xs:element name="DigestMethod" type="xs:string"/>
@@ -75,6 +54,16 @@
 		    <xs:attribute name="AttRefURI" type="xs:anyURI" use="required"/>
 	  </xs:complexType>
 
+	  <!-- =================================== -->
+	  <!-- Implement the xs:any functionality  -->
+	  <!-- using a base64 blob.                -->
+	  <!-- =================================== -->
+	  <xs:complexType name="AnyType">
+		    <xs:complexContent>
+			      <xs:extension base="dsb:Base64DataType"/>
+		    </xs:complexContent>
+	  </xs:complexType>
+	
 	  <xs:element name="Base64Data" type="dsb:Base64DataType"/>
 	  <xs:complexType name="Base64DataType">
 		    <xs:sequence>
@@ -93,7 +82,7 @@
 	  <xs:complexType name="SignaturePtrType">
 		    <xs:sequence>
 			      <xs:element name="NsPrefixMapping"
-                     type="dsb:NsPrefixMappingType"
+                     type="nsl:NsPrefixMappingType"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
 		    </xs:sequence>
