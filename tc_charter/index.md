@@ -2,7 +2,7 @@
 
 The original Call For Participation for this TC may be found at http://lists.oasis-open.org/archives/tc-announce/200706/msg00012.html
 
-The charter for this TC is as follows.
+The revised charter for this TC is as follows.
 
 ## Name of the TC
 
@@ -10,7 +10,9 @@ OASIS Digital Signature Services eXtended (DSS-X) Technical Committee
 
 ## Statement of Purpose
 
-This Technical Committee has as its mandate production of new profiles of the existing OASIS Digital Signature Services core protocol "Digital Signature Service Core Protocols, Elements, and Bindings Version 1.0" and maintenance of this specification and its existing profiles. If at a later date it becomes clear that a new version of DSS is necessary then this may be produced by the TC.
+This Technical Committee has as its mandate production of new profiles of the existing OASIS Digital Signature Services core protocol "Digital Signature Service Core Protocols, Elements, and Bindings Version 1.0" and maintenance of this specification and its existing profiles.  
+A new major version 2.0 of DSS is necessary due to security issues of version 1.0 and because the market requests both the JSON and the XML format.  
+In line with the original charter, this new version with matching profiles will be produced by the TC.
 
 This further includes promotion of the standard and the creation of material helping dissemination. In general terms, the TC has the goal to facilitate the processing of digital signatures and time stamps in a client server environment.
 
@@ -26,7 +28,7 @@ The scope of activity for this TC will be within the following topics:
 
 ## LIST OF DELIVERABLES AND COMPLETION DATES
 
-Below follows the list of generic deliverables (estimated completion Q4 2008):
+Below follows the list of generic deliverables:
 
 1. New DSS Profiles
 2. Further Interoperability tests
