@@ -7,7 +7,7 @@
 
 ## Committee Note 01
 
-## 22 November 2021
+## 14 February 2022
 
 &nbsp;
 
@@ -60,10 +60,10 @@ When referencing this document the following citation format should be used:
 
 **[What's-New-v2.0]**
 
-_What's New in DSS Version 2.0_. Edited by Stefan Hagen, Detlef Huehnlein, and Andreas Kuehne. 22 November 2021. OASIS Committee Note 01. https://docs.oasis-open.org/dss-x/whats-new-dss/v2.0/cn01/whats-new-dss-v2.0-cn01.html. Latest stage: https://docs.oasis-open.org/dss-x/whats-new-dss/v2.0/whats-new-dss-v2.0.html.
+_What's New in DSS Version 2.0_. Edited by Stefan Hagen, Detlef Huehnlein, and Andreas Kuehne. 14 February 2022. OASIS Committee Note 01. https://docs.oasis-open.org/dss-x/whats-new-dss/v2.0/cn01/whats-new-dss-v2.0-cn01.html. Latest stage: https://docs.oasis-open.org/dss-x/whats-new-dss/v2.0/whats-new-dss-v2.0.html.
 
 #### Notices
-Copyright &copy; OASIS Open 2021. All Rights Reserved.
+Copyright &copy; OASIS Open 2022. All Rights Reserved.
 
 Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr).
 
@@ -82,7 +82,20 @@ For complete copyright information please see the full Notices section in an App
 
 # 1 Introduction
 
-Introductory material.
+The DIgital Signature Services (DSS) Version 1.0 was first published in 2007 and has since been implemented in numerous products and tools.
+
+DSS Version 1.0 has proven to be very suited for prviding core functionality, bindings, and profiles for real world signature creation and verification tasks.
+
+DSS Version 2.0 adds JSON and CBOR to the existing XML format and brings various new features and removes possible vulnerabilities in implementations. These changes can be categorized into:
+
+- Added formats
+- Cross-format mappings
+- Hardened data handling
+- Easier adoption of DSS in APIs based on other formats than XML
+
+DSS 2.0 is highly compatible, albeit major release over DSS 1.0. A compliant 2.0 DSS Service fully supports DSS 1.0 client payloads (minus the bad parts TODO). Some summarizing blurb ... TODO.
+
+This document follows the structure of the specification documents (TODO) and cross-references related changes. It is non-normative, so the key words “MUST”, “SHOULD”, “MAY”, and “NOT” are avoided and readers must not assume it states any requirements.
 
 ## 1.1 One way to produce OASIS-formatted HTML from Markdown
 
